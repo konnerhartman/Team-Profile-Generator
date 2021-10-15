@@ -65,10 +65,10 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
         </div>`
 };
 
-function pullData(data) {
-    employeeArray = [];
+// function pullData(data) {
+//     employeeArray = [];
 
     
-};
+// };
 
 module.exports = generateHTML;
