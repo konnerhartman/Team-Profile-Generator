@@ -1,0 +1,28 @@
+{
+  "name": "Team-Profile-Generator",
+  "version": "1.0.0",
+  "description": "This app will allow the user to create a work team profile with multiple employee levels. It will be created using node.js and OOP. The app will prompt the user with questions in terminal/bash, then it will generate an HTML front-end page.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konnerhartman/Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konnerhartman/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/konnerhartman/Team-Profile-Generator#readme"
+}
