@@ -1,4 +1,4 @@
-function generatePage(employeeCard) {
+function generateHTML(employeeCard) {
 return `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -65,10 +65,37 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
         </div>`
 };
 
-// function pullData(data) {
-//     employeeArray = [];
+function pullData(data) {
+    employeeArray = [];
 
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole();
+
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            employeeArray.push(managerCard);
+        }
+
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            employeeArray.push(engineerCard);
+        }
+
+
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            employeeArray.push(internCard);
+        }
+    }
     
-// };
+    const employeeSection = employeeArray.join('');
+
+    const generateTeamPage = generatePage(employeeSection);
+    return generateTeamPage;
+};
 
 module.exports = generateHTML;

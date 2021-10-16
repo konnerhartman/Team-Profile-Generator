@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./src/generateHTML.js')
+const generateHTML = require('./src/generateHTML');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
@@ -10,7 +10,7 @@ const role =  [
     {
         type: 'list',
         name: 'role',
-        message: 'What is this employees role?',
+        message: 'What is the next employees role?',
         choices: ['Engineer', 'Intern', 'Exit']
     }
 ];
@@ -156,10 +156,10 @@ function addNewMember () {
 };
 
 addTeam() 
-.then((answers) => {
-    const generateDoc = generateHTML(answers);
 
+function writeHTML() {
+    const generateDoc = generateHTML(answer)
     fs.writeFile('index.html', generateDoc, (err) =>
-      err ? console.log(err) : console.log('Successfuly created a Team Page!')
-    );
-}
+    err ? console.log(err) : console.log('Successfuly created a Team Page!')
+)};
+
