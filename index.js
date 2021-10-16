@@ -143,6 +143,7 @@ function addNewMember () {
                         answer.school
                     )
                 employeeArray.push(newIntern);
+                console.log(employeeArray);
                 if (answer.addnew === 'Yes') {
                     addNewMember();
                 } else {
@@ -158,7 +159,7 @@ function addNewMember () {
 addTeam() 
 
 function writeHTML() {
-    const generateDoc = generateHTML(answer)
+    const generateDoc = generateHTML(employeeArray)
     fs.writeFile('index.html', generateDoc, (err) =>
     err ? console.log(err) : console.log('Successfuly created a Team Page!')
 )};

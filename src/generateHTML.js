@@ -1,4 +1,4 @@
-function generateHTML(employeeCard) {
+function generateHTML(employeeCards) {
 return `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -18,7 +18,7 @@ return `<!DOCTYPE html>
             <main>
                 <div class="container">
                     <div class="row justify-content-center">
-                    ${employeeCard.name}
+                    ${employeeCards}
                     </div>
                 </div>
             </main>
@@ -47,7 +47,7 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
             <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-wrench"></i> Engineer</h5>
                 <p class="card-text">ID: ${engineer.id}</p>
-                <p class="card-text">Email: <a href="mailto:${engineer.email}">${engineeremail}</a></p>
+                <p class="card-text">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                 <p class="card-text">Github: <a href="https://github.com/${engineer.github}".${engineer.github}</a></p>
             </div>
         </div>`
@@ -65,37 +65,37 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
         </div>`
 };
 
-function pullData(data) {
-    employeeArray = [];
+function generatePage(data) {
+    employeeCardArray = [];
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
-        const role = employee.getRole();
+        const role = employee.getRole;
 
         if (role === 'Manager') {
             const managerCard = generateManager(employee);
 
-            employeeArray.push(managerCard);
+            employeeCardArray.push(managerCard);
         }
 
         if (role === 'Engineer') {
             const engineerCard = generateEngineer(employee);
 
-            employeeArray.push(engineerCard);
+            employeeCardArray.push(engineerCard);
         }
 
 
         if (role === 'Intern') {
             const internCard = generateIntern(employee);
 
-            employeeArray.push(internCard);
+            employeeCardArray.push(internCard);
         }
     }
-    
-    const employeeSection = employeeArray.join('');
+    console.log(employeeCardArray);
+    const employeeCards = employeeCardArray.join('');
 
-    const generateTeamPage = generatePage(employeeSection);
+    const generateTeamPage = generateHTML(employeeCards);
     return generateTeamPage;
 };
 
-module.exports = generateHTML;
+module.exports = generatePage;
