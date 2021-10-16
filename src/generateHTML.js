@@ -67,7 +67,7 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
 
 function generatePage(data) {
     employeeCardArray = [];
-
+    console.log(data)
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
         const role = employee.getRole;
