@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./src/generateHTML.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+const generatePage = require('./src/generateHTML.js');
 let employeeArray = [];
 
 const role =  [ 
@@ -159,7 +160,7 @@ function addNewMember () {
 addTeam() 
 
 function writeHTML() {
-    const generateDoc = generateHTML(employeeArray)
+    const generateDoc = generatePage(employeeArray)
     fs.writeFile('index.html', generateDoc, (err) =>
     err ? console.log(err) : console.log('Successfuly created a Team Page!')
 )};
