@@ -129,7 +129,7 @@ function addNewMember () {
                 if (answer.addnew === 'Yes') {
                     addNewMember();
                 } else {
-                    writeHTML();
+                    writeHTML(employeeArray);
                 }
             })
         } else if (answer.role === 'Intern') {
@@ -147,11 +147,11 @@ function addNewMember () {
                 if (answer.addnew === 'Yes') {
                     addNewMember();
                 } else {
-                    writeHTML();
+                    writeHTML(employeeArray);
                 }
             })
         } else {
-            writeHTML();
+            writeHTML(employeeArray);
         }
     })
 };
@@ -159,8 +159,7 @@ function addNewMember () {
 addTeam() 
 
 function writeHTML(employeeArray) {
-    const generateDoc = generatePage(employeeArray)
-    fs.writeFile('index.html', generateDoc, (err) =>
+    fs.writeFileSync('index.html', generatePage(employeeArray), (err) =>
     err ? console.log(err) : console.log('Successfuly created a Team Page!')
 )};
 
