@@ -51,7 +51,7 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
                 <h5 class="card-title"><i class="fas fa-wrench"></i> Engineer</h5>
                 <p class="card-text">ID: ${engineer.id}</p>
                 <p class="card-text">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="card-text">Github: <a href="https://github.com/${engineer.github}".></a>${engineer.github}</p>
+                <p class="card-text">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
         </div>`
 };
