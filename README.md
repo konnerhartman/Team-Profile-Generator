@@ -23,6 +23,7 @@
   - [License](#license)
   - [Credits](#credits)
   - [Links](#links)
+  - [Screencaptures](#screencaptures)
   - [Tests](#tests)
   - [Questions](#questions)
   
@@ -36,10 +37,18 @@
   MIT
   
   ## Credits
-  (Myself) Konner Hartman. BCS Learning Assistance. BCS Tutor. BCS TA.
+  (Myself) Konner Hartman
+  <br/>BCS Learning Assistance
+  <br/>BCS Tutor
+  <br/>BCS TA
 
   ## Links
-  https://github.com/konnerhartman/Team-Profile-Generator
+  Repository: https://github.com/konnerhartman/Team-Profile-Generator
+  <br/>
+  Demo Video: https://youtu.be/dgEncg6hH9Y
+
+  ## Screencaptures
+  ![Gif](./assets/Team_Profile_Generator.gif)
   
   ## Tests
   npm test. To run, after 'npm install' is completed, run 'npm test' in the command line.
