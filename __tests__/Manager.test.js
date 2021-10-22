@@ -1,5 +1,6 @@
 const Manager = require('../lib/Manager.js');
 
+// Tests to see if manager office number value is correct
 describe('Manager', () => {
     describe('office', () => {
         it('should set office number', () => {
@@ -9,6 +10,7 @@ describe('Manager', () => {
         });
     });
 
+    // Tests to see if manager role value is correct
     describe('role', () => {
         it('should set role to Manager', () => {
             const role = "Manager";

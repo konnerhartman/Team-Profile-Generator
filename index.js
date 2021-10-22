@@ -4,8 +4,10 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const generatePage = require('./src/generateHTML.js');
+// Creates an empty array to store user input of employees
 let employeeArray = [];
 
+// Prompt to select next team member after initial manager is set
 const role =  [ 
     {
         type: 'list',
@@ -15,6 +17,7 @@ const role =  [
     }
 ];
 
+// Prompts for manager info
 const employee = {
 Manager: [            
     {
@@ -39,6 +42,7 @@ Manager: [
     }
 ],
 
+// Prompts for engineer info
 Engineer: [            
     {
         type: 'input',
@@ -58,7 +62,7 @@ Engineer: [
     {
         type: 'input',
         name: 'github',
-        message: 'What is this engineers Github username??',
+        message: 'What is this engineers Github username?',
     },
     {
         type: 'list',
@@ -68,6 +72,7 @@ Engineer: [
     }
 ],
 
+// Prompts for intern info
 Intern: [            
     {
         type: 'input',
@@ -96,7 +101,8 @@ Intern: [
         choices: ['Yes', 'No']
     }
 ]};
-    
+
+// Function to pull manager data from prompts and push to array
 function addTeam () {
     inquirer.prompt(employee.Manager)
     .then(answer => {
@@ -112,6 +118,7 @@ function addTeam () {
     })
 };
 
+// Function to add new members after the manager role
 function addNewMember () {
     inquirer.prompt(role)
     .then(answer => {
@@ -156,10 +163,11 @@ function addNewMember () {
     })
 };
 
+// Calls initial function
 addTeam() 
 
+// Writes data to generateHTML.js and creates html file
 function writeHTML(employeeArray) {
     fs.writeFileSync('index.html', generatePage(employeeArray), (err) =>
     err ? console.log(err) : console.log('Successfuly created a Team Page!')
 )};
-

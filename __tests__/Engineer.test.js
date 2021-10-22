@@ -1,5 +1,6 @@
 const Engineer = require('../lib/Engineer.js');
 
+// Tests to see if engineer github value is correct
 describe('Engineer', () => {
     describe('github', () => {
         it('should set github link', () => {
@@ -9,6 +10,7 @@ describe('Engineer', () => {
         });
     });
 
+    // Tests to see if engineer role value is correct
     describe('role', () => {
         it('should set role to Engineer', () => {
             const role = "Engineer";

@@ -1,3 +1,4 @@
+// Creates html body
 function generateHTML(employeeCards) {
 return `<!DOCTYPE html>
         <html lang="en">
@@ -29,6 +30,7 @@ return `<!DOCTYPE html>
         </html>`
 };
 
+// Creates html manager card
 function generateManager(manager) {
 return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18rem;">
             <div class="card-header">${manager.name}</div>
@@ -41,6 +43,7 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
         </div>`
 };
 
+// Creates html engineer card
 function generateEngineer(engineer) {
 return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18rem;">
             <div class="card-header">${engineer.name}</div>
@@ -48,11 +51,12 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
                 <h5 class="card-title"><i class="fas fa-wrench"></i> Engineer</h5>
                 <p class="card-text">ID: ${engineer.id}</p>
                 <p class="card-text">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="card-text">Github: <a href="https://github.com/${engineer.github}".${engineer.github}</a></p>
+                <p class="card-text">Github: <a href="https://github.com/${engineer.github}".></a>${engineer.github}</p>
             </div>
         </div>`
 };
 
+// Creates html intern card
 function generateIntern(intern) {
 return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18rem;">
             <div class="card-header">${intern.name}</div>
@@ -65,13 +69,13 @@ return `<div class="card text-dark bg-info m-3 shadow-lg" style="max-width: 18re
         </div>`
 };
 
+// Function to cycle through data from user input and place into functions above
 function generatePage(data) {
     employeeCardArray = [];
-    
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
-        const role = employee.getRole;
-
+        const role = employee.getRole();
+        
         if (role === 'Manager') {
             const managerCard = generateManager(employee);
 
@@ -84,16 +88,17 @@ function generatePage(data) {
             employeeCardArray.push(engineerCard);
         }
 
-
         if (role === 'Intern') {
             const internCard = generateIntern(employee);
 
             employeeCardArray.push(internCard);
         }
     }
-    console.log(employeeCardArray);
+
+    //Joins all employee cards into an array
     const employeeCards = employeeCardArray.join('');
 
+    // Generates html page with employee cards
     const generateTeamPage = generateHTML(employeeCards);
     return generateTeamPage;
 };

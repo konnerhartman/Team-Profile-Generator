@@ -1,5 +1,6 @@
 const Intern = require('../lib/Intern.js');
 
+// Tests to see if intern school value is correct
 describe('Intern', () => {
     describe('school', () => {
         it('should set name of intern school', () => {
@@ -9,6 +10,7 @@ describe('Intern', () => {
         });
     });
 
+    // Tests to see if intern role value is correct
     describe('role', () => {
         it('should set role to Intern', () => {
             const role = "Intern";
